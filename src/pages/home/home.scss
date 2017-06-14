@@ -1,3 +1,40 @@
 page-home {
+    .toolbar-title{
+        font-size: 3.0rem;
 
+    }
+    ion-content{
+        background-color:rgb(243, 227, 227) !important;
+        ion-list{
+            background-color: transparent;
+            button{
+                background-color: transparent !important;
+                
+            }   
+        }
+    }
+    ion-title {
+        text-transform: uppercase;
+        img{
+            width:40px;
+            border: 1px solid black;
+        }
+    }
+    button {
+        img{
+            width:30px;
+            border: 1px solid black;
+        }
+    }
+    .notFound{
+        text-align: center;
+    }
+
+    ion-label{
+        overflow: auto;
+        display: -webkit-inline-box;
+        h2 {
+                padding-left: 5%;
+        }
+    }
 }

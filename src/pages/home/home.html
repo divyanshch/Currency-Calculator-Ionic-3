@@ -1,18 +1,30 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-title (click)="changeBase()">
+        <img src="{{baseFlag}}" /> {{baseCurrency}}
+    </ion-title>
+     <ion-buttons end>
+      <button ion-button icon-only (click)='sortFinalResult()'>
+        <ion-icon name="reorder"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+      <ion-searchbar placeholder="Search"
+                   [showCancelButton]="shouldShowCancel"
+                   (ionInput)="searchInput($event)">
+    </ion-searchbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
+  <h1 class='notFound' *ngIf='finalResult.length==0'>Nothing Found</h1>
+  <ion-list  >
+    <button  *ngFor='let result of finalResult' ion-item detail-none (click)="currencyDetails([(result)])">
+      <img src="{{result.countryFlag}}">
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <h2 *ngIf='sortNumber!=3'> {{result.countryName}}  ({{result.countryCurrencyCode}})</h2>
+      <h2 *ngIf='sortNumber==3'> {{result.countryCurrencyCode}}  ({{result.countryName}})</h2>
+      
+      <h2 item-end >{{result.countryExchangeRate}}</h2>  
+    </button>
+  </ion-list>
 </ion-content>

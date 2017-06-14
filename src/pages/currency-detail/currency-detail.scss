@@ -1,0 +1,58 @@
+page-currency-detail {
+    //increase title size
+    ion-content{
+        background-color:rgb(243, 227, 227) !important;
+    }
+    .toolbar-title{
+        font-size: 2.0rem;
+    }
+    //turn country code to upper case
+    //adjust padding for mobile devices
+    ion-title {
+        text-transform: uppercase;
+        padding-left:60px !important;
+        padding-right:50px !important;
+        //set flag size and give a border
+        img{
+            width:30px;
+            border: 1px solid black;
+        }
+    }
+    
+    ion-searchbar{
+        //remove the search icon
+        .searchbar-search-icon{
+            display: none;
+        }
+        //remove the clear icon
+       .searchbar-clear-icon {
+          display: none !important;
+        }
+        //align input to the end and remove padding and increase size
+        .searchbar-input{
+            text-align:end;
+            padding:0px !important;
+            font-size: 3.4rem !important;
+        }
+    }
+    .transparent{
+        background-color: rgba(0, 0, 0, 0.08) !important;
+    }
+    ion-item{
+        h1{
+            font-size: 3.4rem ;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        img{
+            margin: 0px !important;
+            width:100px;
+            border: 1px solid black;
+        }
+        textarea{
+            text-align:end;
+            padding:0px !important;
+            font-size: 3.4rem !important;
+        }
+    }
+}
